@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledCard = styled.div`
+export const StyledCard = styled.a`
   width: 90px;
   height: 90px;
   border-radius: 8px;
@@ -15,7 +15,6 @@ export const StyledCard = styled.div`
   text-align: center;
 
   overflow: hidden;
-  cursor: pointer;
   transform: scale(0.95);
   transition: transform 0.2s;
 
