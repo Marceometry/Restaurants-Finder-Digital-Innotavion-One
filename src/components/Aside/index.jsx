@@ -36,6 +36,30 @@ export function Aside() {
           address='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
           img={testImg}
         />
+        <RestaurantCard
+          name='Nome do Restaurante'
+          stars={4.5}
+          address='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+          img={testImg}
+        />
+        <RestaurantCard
+          name='Nome do Restaurante'
+          stars={4.5}
+          address='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+          img={testImg}
+        />
+        <RestaurantCard
+          name='Nome do Restaurante'
+          stars={4.5}
+          address='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+          img={testImg}
+        />
+        <RestaurantCard
+          name='Nome do Restaurante'
+          stars={4.5}
+          address='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+          img={testImg}
+        />
       </AsideBody>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

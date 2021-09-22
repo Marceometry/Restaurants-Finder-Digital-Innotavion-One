@@ -11,7 +11,7 @@ export const StyledRestaurantCard = styled.a`
   justify-content: space-between;
 
   &:hover {
-    background-color: #f7f7f7;
+    background-color: #f5f5f5;
     border-left-color: ${({ theme }) => theme.colors.primary};
   }
 

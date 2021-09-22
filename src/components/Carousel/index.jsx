@@ -9,6 +9,7 @@ export function Carousel() {
   const settings = {
     dots: true,
     infinite: false,
+    arrows: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
