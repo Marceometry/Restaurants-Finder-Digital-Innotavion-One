@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../../assets/logo.svg'
 import testImg from '../../assets/restaurante-fake.png'
 import { Carousel } from '../Carousel'
 import { RestaurantCard } from '../RestaurantCard'
-import { SearchBox } from '../SearchBox/index'
+import { SearchBox } from '../SearchBox'
+import { Modal } from '../Modal'
 import { AsideBody, AsideHeader, Container } from './styles'
 
 export function Aside() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <Container>
       <AsideHeader>
@@ -34,6 +37,8 @@ export function Aside() {
           img={testImg}
         />
       </AsideBody>
+
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </Container>
   )
 }
