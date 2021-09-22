@@ -1,6 +1,6 @@
 import React from 'react'
 import testImg from '../../assets/restaurante-fake.png'
-import { ImageCard } from '../ImageCard'
+import { ImageCard } from './ImageCard'
 import { StyledCarousel, StyledSlider } from './styles'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
