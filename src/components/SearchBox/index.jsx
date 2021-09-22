@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import TextField, { Input } from '@material/react-text-field'
 import MaterialIcon from '@material/react-material-icon'
 import '@material/react-text-field/dist/text-field.css'
 import '@material/react-material-icon/dist/material-icon.css'
 
-export function SearchBox() {
-  const [value, setValue] = useState('')
-
+export function SearchBox({ value, setValue, handleKeyPress }) {
   return (
     <TextField
       outlined
@@ -17,7 +15,11 @@ export function SearchBox() {
         <MaterialIcon role='button' icon={`${!value ? 'search' : 'close'}`} />
       }
     >
-      <Input value={value} onChange={(e) => setValue(e.target.value)} />
+      <Input
+        value={value}
+        onKeyPress={handleKeyPress}
+        onChange={(e) => setValue(e.target.value)}
+      />
     </TextField>
   )
 }
