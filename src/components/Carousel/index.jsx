@@ -20,17 +20,12 @@ export function Carousel() {
       <h1>Na sua área</h1>
 
       <StyledSlider {...settings}>
-        <ImageCard img={testImg} />
-        <ImageCard img={testImg} />
-        <ImageCard img={testImg} />
-        <ImageCard img={testImg} />
-        <ImageCard img={testImg} />
-        <ImageCard img={testImg} />
-        <ImageCard img={testImg} />
-        <ImageCard img={testImg} />
-        <ImageCard img={testImg} />
-        <ImageCard img={testImg} />
-        <ImageCard img={testImg} />
+        <ImageCard img={testImg} name='Nome do restaurante' />
+        <ImageCard img={testImg} name='Nome do restaurante' />
+        <ImageCard img={testImg} name='Nome do restaurante' />
+        <ImageCard img={testImg} name='Nome do restaurante' />
+        <ImageCard img={testImg} name='Nome do restaurante' />
+        <ImageCard img={testImg} name='Nome do restaurante' />
       </StyledSlider>
     </StyledCarousel>
   )

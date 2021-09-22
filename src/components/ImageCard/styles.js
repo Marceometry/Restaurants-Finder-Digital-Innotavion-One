@@ -10,6 +10,10 @@ export const StyledCard = styled.div`
   background-size: cover;
   background-color: ${({ theme }) => theme.colors.background};
 
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
   overflow: hidden;
   cursor: pointer;
   transform: scale(0.95);
@@ -17,5 +21,12 @@ export const StyledCard = styled.div`
 
   &:hover {
     transform: scale(1);
+  }
+
+  p {
+    margin: 6px;
+    font-size: 14px;
+    color: #fff;
+    background-color: ${({ theme }) => theme.colors.shadow};
   }
 `
