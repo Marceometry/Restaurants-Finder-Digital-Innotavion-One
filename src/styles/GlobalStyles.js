@@ -40,8 +40,4 @@ export const GlobalStyles = createGlobalStyle`
     border-radius: 8px;
     transition: 0.2s;
   }
-
-  /* ::-webkit-scrollbar-thumb:active {
-    background: var(--blue-dark);
-  } */
 `

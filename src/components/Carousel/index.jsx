@@ -11,7 +11,6 @@ export function Carousel() {
 
   const settings = {
     dots: true,
-    autoplay: true,
     infinite: false,
     arrows: false,
     speed: 500,
