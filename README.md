@@ -1,5 +1,5 @@
 <h1 align="center">
-  Netflix Clone - Starflix
+  Restaurants Finder
 </h1>
 
 <p align="center">
@@ -19,26 +19,25 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
-- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
-- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-- [JQuery](https://jquery.com/)
+- [ReactJS](https://reactjs.org/)
+- [Styled-Components](https://styled-components.com/)
+- [Redux](https://redux.js.org/)
 
 ## 💻 Projeto
 
-Este projeto foi feito durante o curso "Recriando a Interface do Netflix", do Bootcamp [LocalizaLabs React Developer](https://web.digitalinnovation.one/track/localizalabs-react-developer), pela plataforma [Digital Innovation One](https://web.digitalinnovation.one/home). Minha adaptação foi transformar em uma Netflix só com conteúdos de Star Wras: Starflix
+Este projeto foi feito durante o curso "Criando um site para encontrar restaurantes usando Google Maps que consulta API do Google", do Bootcamp [LocalizaLabs React Developer](https://web.digitalinnovation.one/track/localizalabs-react-developer), pela plataforma [Digital Innovation One](https://web.digitalinnovation.one/home).
 
 ## 💣 Funcionalidades
 
-- Responsividade com Media Queries
-- Carrossel de filmes utilizando o plugin JQuery Owl Carousel
+- Conexão com a API do Google, obtendo acesso à Google Places API e à Google Maps API.
+- Busca automática de restaurantes próximos baseado na localização do usuário.
+- Busca de restaurantes por texto.
+- Modal que exibe detalhes do restaurante selecionado
+- Componentes de Skeleton Loading que melhoram a experiência do usuário.
 
-## ✔ Desafios realizados
+<!-- ## ✔ Desafios realizados
 
-- Melhora na responsividade
-- Menu dropdown em telas pequenas
-- Box-shadow na capa do filme em destaque
-- Melhoras gerais no estilo, como espaçamentos, efeitos :hover e smooth-scroll
+-  -->
 
 ---
 
