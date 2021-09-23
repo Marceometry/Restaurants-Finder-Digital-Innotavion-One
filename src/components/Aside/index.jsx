@@ -15,7 +15,7 @@ export function Aside({ setQuery, handleOpenModal }) {
       <AsideHeader>
         <img src={logo} alt='Logo' />
         <SearchBox setQuery={setQuery} />
-        <Carousel />
+        <Carousel items={restaurants} />
       </AsideHeader>
 
       <AsideBody>

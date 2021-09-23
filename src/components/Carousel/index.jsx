@@ -1,13 +1,13 @@
 import React from 'react'
 import testImg from '../../assets/restaurante-fake.png'
-import { useSelector } from 'react-redux'
 import { ImageCard } from './ImageCard'
+// import { Loader } from '../Loader'
 import { StyledCarousel, StyledSlider } from './styles'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-export function Carousel() {
-  const { restaurants } = useSelector((state) => state.restaurants)
+export function Carousel({ items }) {
+  // if (items.length === 0) return <Loader />
 
   const settings = {
     dots: true,
@@ -24,11 +24,12 @@ export function Carousel() {
       <h1>Na sua área</h1>
 
       <StyledSlider {...settings}>
-        {restaurants
-          ? restaurants.map((restaurant) => (
+        {items
+          ? items.map((item) => (
               <ImageCard
-                name={restaurant.name}
-                img={restaurant.photos ? restaurant.photos[0].getUrl() : ''}
+                key={item.place_id}
+                name={item.name}
+                img={item.photos ? item.photos[0].getUrl() : ''}
               />
             ))
           : ''}
