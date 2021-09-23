@@ -1,13 +1,13 @@
 import React from 'react'
 import testImg from '../../assets/restaurante-fake.png'
 import { ImageCard } from './ImageCard'
-// import { Loader } from '../Loader'
+// import { LottieLoader } from '../Loader/Lottie'
 import { StyledCarousel, StyledSlider } from './styles'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 export function Carousel({ items }) {
-  // if (items.length === 0) return <Loader />
+  // if (items.length === 0) return <LottieLoader />
 
   const settings = {
     dots: true,
@@ -34,7 +34,7 @@ export function Carousel({ items }) {
             ))
           : ''}
         <ImageCard img={testImg} name='Nome do restaurante' />
-        <ImageCard img={testImg} name='Nome do restaurante' />
+        <ImageCard img='a' name='Nome do restaurante' />
         <ImageCard img={testImg} name='Nome do restaurante' />
         <ImageCard img={testImg} name='Nome do restaurante' />
         <ImageCard img={testImg} name='Nome do restaurante' />

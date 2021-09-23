@@ -2,7 +2,7 @@ import React from 'react'
 import Lottie from 'react-lottie'
 import animation from '../../assets/restaurants-loading.json'
 
-export function Loader() {
+export function LottieLoader() {
   const options = {
     loop: true,
     autoplay: true,

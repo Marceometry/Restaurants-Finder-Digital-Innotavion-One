@@ -15,7 +15,8 @@ export const StyledRestaurantCard = styled.a`
     border-left-color: ${({ theme }) => theme.colors.primary};
   }
 
-  > div {
+  > div:first-child {
+    max-width: 226px;
     margin-right: 16px;
     display: flex;
     justify-content: space-between;

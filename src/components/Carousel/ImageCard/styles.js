@@ -9,10 +9,12 @@ export const StyledCard = styled.a`
   background-repeat: no-repeat;
   background-size: cover;
   background-color: ${({ theme }) => theme.colors.background};
+  background-image: ${({ backgroundImage }) => `url(${backgroundImage})`};
 
   display: flex;
   justify-content: center;
   text-align: center;
+  position: relative;
 
   overflow: hidden;
   transform: scale(0.95);
@@ -23,7 +25,7 @@ export const StyledCard = styled.a`
   }
 
   p {
-    margin: 6px;
+    padding: 6px;
     font-size: 14px;
     color: #fff;
     background-color: ${({ theme }) => theme.colors.shadow};
