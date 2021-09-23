@@ -1,13 +1,12 @@
 import React from 'react'
-import testImg from '../../assets/restaurante-fake.png'
 import { ImageCard } from './ImageCard'
-// import { LottieLoader } from '../Loader/Lottie'
+import { LottieLoader } from '../Loader/Lottie'
 import { StyledCarousel, StyledSlider } from './styles'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-export function Carousel({ items }) {
-  // if (items.length === 0) return <LottieLoader />
+export function Carousel({ items, handleOpenModal }) {
+  if (items.length === 0) return <LottieLoader />
 
   const settings = {
     dots: true,
@@ -30,15 +29,10 @@ export function Carousel({ items }) {
                 key={item.place_id}
                 name={item.name}
                 img={item.photos ? item.photos[0].getUrl() : ''}
+                onClick={() => handleOpenModal(item.place_id)}
               />
             ))
           : ''}
-        <ImageCard img={testImg} name='Nome do restaurante' />
-        <ImageCard img='a' name='Nome do restaurante' />
-        <ImageCard img={testImg} name='Nome do restaurante' />
-        <ImageCard img={testImg} name='Nome do restaurante' />
-        <ImageCard img={testImg} name='Nome do restaurante' />
-        <ImageCard img={testImg} name='Nome do restaurante' />
       </StyledSlider>
     </StyledCarousel>
   )

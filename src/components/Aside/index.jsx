@@ -1,9 +1,8 @@
 import React from 'react'
 import logo from '../../assets/logo.svg'
-import testImg from '../../assets/restaurante-fake.png'
 import { useSelector } from 'react-redux'
 import { Carousel } from '../Carousel'
-import { RestaurantCard } from '../RestaurantCard'
+import { RestaurantCard } from './RestaurantCard'
 import { SearchBox } from './SearchBox'
 import { AsideBody, AsideHeader, Container } from './styles'
 
@@ -15,7 +14,7 @@ export function Aside({ setQuery, handleOpenModal }) {
       <AsideHeader>
         <img src={logo} alt='Logo' />
         <SearchBox setQuery={setQuery} />
-        <Carousel items={restaurants} />
+        <Carousel items={restaurants} handleOpenModal={handleOpenModal} />
       </AsideHeader>
 
       <AsideBody>
@@ -31,20 +30,6 @@ export function Aside({ setQuery, handleOpenModal }) {
               />
             ))
           : ''}
-        <RestaurantCard
-          name='Nome desse Restaurante'
-          stars={5}
-          address='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-          onClick={() => handleOpenModal('1')}
-          img={testImg}
-        />
-        <RestaurantCard
-          name='Nome do Restaurante'
-          stars={4.5}
-          address='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-          onClick={() => handleOpenModal('2')}
-          img={testImg}
-        />
       </AsideBody>
     </Container>
   )

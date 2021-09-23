@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { SkeletonLoader } from '../../Loader/Skeleton'
 import { StyledCard } from './styles'
 
-export function ImageCard({ img, name }) {
+export function ImageCard({ img, name, onClick }) {
   const [imageLoaded, setImageLoaded] = useState(false)
 
   useEffect(() => {
@@ -12,14 +12,14 @@ export function ImageCard({ img, name }) {
     imageLoader.addEventListener('load', () => setImageLoaded(true))
     imageLoader.addEventListener('error', () => setImageLoaded(true))
 
-    return (
-      imageLoader.removeEventListener('load', () => setImageLoaded(true)),
+    return () => {
+      imageLoader.removeEventListener('load', () => setImageLoaded(true))
       imageLoader.removeEventListener('error', () => setImageLoaded(true))
-    )
+    }
   }, [img])
 
   return (
-    <StyledCard backgroundImage={img}>
+    <StyledCard backgroundImage={img} onClick={onClick}>
       {!imageLoaded && <SkeletonLoader width='100%' height='100%' absolute />}
       <p>{name}</p>
     </StyledCard>
