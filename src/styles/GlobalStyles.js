@@ -1,10 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
+  body {
+    font: 400 16px ${({ theme }) => theme.fonts.regular};
+    color: ${({ theme }) => theme.colors.text};
+  }
+  
   h1,
   h2 {
     font-weight: bold;
-    color: ${({ theme }) => theme.colors.text};
   }
 
   h1 {

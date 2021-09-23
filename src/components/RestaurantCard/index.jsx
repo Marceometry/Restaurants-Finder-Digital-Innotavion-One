@@ -2,9 +2,9 @@ import React from 'react'
 import ReactStars from 'react-rating-stars-component'
 import { StyledRestaurantCard } from './styles'
 
-export function RestaurantCard({ name, stars, address, img }) {
+export function RestaurantCard({ name, stars, address, img, onClick }) {
   return (
-    <StyledRestaurantCard>
+    <StyledRestaurantCard onClick={onClick}>
       <div>
         <h2>{name}</h2>
 
