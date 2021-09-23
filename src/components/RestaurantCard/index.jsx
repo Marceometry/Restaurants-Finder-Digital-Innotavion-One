@@ -33,6 +33,7 @@ export function RestaurantCard({ name, stars, address, img, onClick }) {
         src={img}
         alt={name}
         // onLoad={() => setImageLoaded(true)}
+        // onError={() => setImageLoaded(true)}
         style={{ display: imageLoaded ? 'initial' : 'none' }}
       />
       {!imageLoaded && <SkeletonLoader width='96px' height='96px' />}
