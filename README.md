@@ -1,5 +1,5 @@
 <h1 align="center">
-  Restaurants Finder
+  <img src="./src/assets/logo.svg" alt="Restaurants Finder" />
 </h1>
 
 <p align="center">
