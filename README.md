@@ -1,5 +1,14 @@
 <h1 align="center">
-  <img src="./src/assets/logo.svg" alt="Restaurants Finder" />
+  <img
+    alt="Restaurants Finder"
+    src="./src/assets/logo.svg"
+    style="
+      width: 300px;
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+    "
+  />
 </h1>
 
 <p align="center">
