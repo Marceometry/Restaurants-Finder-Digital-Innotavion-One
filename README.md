@@ -33,6 +33,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
+<h4> Acesse em: https://restaurants-finder-reactjs.vercel.app/ </h4>
+
 Este projeto foi feito durante o curso "Criando um site para encontrar restaurantes usando Google Maps que consulta API do Google", do Bootcamp [LocalizaLabs React Developer](https://web.digitalinnovation.one/track/localizalabs-react-developer), pela plataforma [Digital Innovation One](https://web.digitalinnovation.one/home).
 
 ## 💣 Funcionalidades
