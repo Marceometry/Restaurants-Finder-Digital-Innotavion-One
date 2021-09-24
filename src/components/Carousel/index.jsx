@@ -1,18 +1,19 @@
 import React from 'react'
 import { ImageCard } from './ImageCard'
-import { LottieLoader } from '../Loader/Lottie'
 import { StyledCarousel, StyledSlider } from './styles'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 export function Carousel({ items, handleOpenModal }) {
-  if (!items) return <LottieLoader />
+  if (items.length === 0) return ''
 
   const settings = {
     dots: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
     infinite: false,
     arrows: false,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 4,
     slidesToScroll: 4,
     adaptiveHeight: true,

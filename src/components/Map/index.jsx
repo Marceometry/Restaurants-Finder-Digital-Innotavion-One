@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { GoogleApiWrapper, Map as GoogleMap, Marker } from 'google-maps-react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setRestaurants, setRestaurant } from '../../redux/modules/restaurants'
+import {
+  setRestaurants,
+  setNearbyRestaurants,
+  setRestaurant,
+} from '../../redux/modules/restaurants'
 import { MapContainer } from './styles'
 
 export function Map({ google, query, placeId }) {
@@ -58,7 +62,7 @@ export function Map({ google, query, placeId }) {
     })
   }
 
-  function searchNearby(map, center) {
+  function searchNearby(map, center, isFirstLoad) {
     const service = new google.maps.places.PlacesService(map)
     dispatch(setRestaurants())
 
@@ -70,14 +74,15 @@ export function Map({ google, query, placeId }) {
 
     service.nearbySearch(request, (results, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        dispatch(setRestaurants(results))
+        dispatch(setNearbyRestaurants(results))
+        isFirstLoad && dispatch(setRestaurants(results))
       }
     })
   }
 
   function onMapReady(_, map) {
     setMap(map)
-    searchNearby(map, map.center)
+    searchNearby(map, map.center, true)
   }
 
   return (
