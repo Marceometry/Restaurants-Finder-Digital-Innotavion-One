@@ -1,19 +1,13 @@
-import React, {
-  useEffect,
-  // useState
-} from 'react'
+import React, { useEffect, useState } from 'react'
 import { GoogleApiWrapper, Map as GoogleMap, Marker } from 'google-maps-react'
-import {
-  // useDispatch,
-  useSelector,
-} from 'react-redux'
-// import { setRestaurants, setRestaurant } from '../../redux/modules/restaurants'
+import { useDispatch, useSelector } from 'react-redux'
+import { setRestaurants, setRestaurant } from '../../redux/modules/restaurants'
 import { MapContainer } from './styles'
 
 export function Map({ google, query, placeId }) {
   const { restaurants } = useSelector((state) => state.restaurants)
-  // const [map, setMap] = useState(null)
-  // const dispatch = useDispatch()
+  const [map, setMap] = useState(null)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if (!query) return
@@ -26,72 +20,63 @@ export function Map({ google, query, placeId }) {
   }, [placeId])
 
   function getRestaurantById(placeId) {
-    //   const service = new google.maps.places.PlacesService(map)
-    //   dispatch(setRestaurant())
+    const service = new google.maps.places.PlacesService(map)
 
-    //   const request = {
-    //     placeId,
-    //     fields: [
-    //       'name',
-    //       'opening_hours',
-    //       'formatted_address',
-    //       'formatted_phone_number',
-    //     ],
-    //   }
+    const request = {
+      placeId,
+      fields: [
+        'name',
+        'opening_hours',
+        'formatted_address',
+        'formatted_phone_number',
+      ],
+    }
 
-    //   service.getDetails(request, (place, status) => {
-    //     console.log(status)
-    //     if (status === google.maps.places.PlacesServiceStatus.OK) {
-    //       dispatch(setRestaurant(place))
-    //     }
-    //   })
-    console.log(placeId)
+    service.getDetails(request, (place, status) => {
+      console.log('getRestaurantById - ', place)
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        dispatch(setRestaurant(place))
+      }
+    })
   }
 
   function searchByQuery(query) {
-    //   const service = new google.maps.places.PlacesService(map)
-    //   dispatch(setRestaurants())
+    const service = new google.maps.places.PlacesService(map)
+    dispatch(setRestaurants())
 
-    //   const request = {
-    //     location: map.center,
-    //     radius: '1000',
-    //     type: ['restaurant'],
-    //     query,
-    //   }
+    const request = {
+      location: map.center,
+      radius: '1000',
+      type: ['restaurant'],
+      query,
+    }
 
-    //   service.textSearch(request, (results, status) => {
-    //     console.log(status)
-    //     if (status === google.maps.places.PlacesServiceStatus.OK) {
-    //       dispatch(setRestaurants(results))
-    //     }
-    //   })
-    console.log(query)
+    service.textSearch(request, (results, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        dispatch(setRestaurants(results))
+      }
+    })
   }
 
   function searchNearby(map, center) {
-    //   const service = new google.maps.places.PlacesService(map)
-    //   dispatch(setRestaurants())
+    const service = new google.maps.places.PlacesService(map)
+    dispatch(setRestaurants())
 
-    //   const request = {
-    //     location: center,
-    //     radius: '20000',
-    //     type: ['restaurant'],
-    //   }
+    const request = {
+      location: center,
+      radius: '20000',
+      type: ['restaurant'],
+    }
 
-    //   service.nearbySearch(request, (results, status) => {
-    //     console.log(status)
-    //     if (status === google.maps.places.PlacesServiceStatus.OK) {
-    //       dispatch(setRestaurants(results))
-    //     }
-    //   })
-    const lat = center.lat().toFixed(2)
-    const lng = center.lng().toFixed(2)
-
-    console.log(`map ready --> ${lat}, ${lng}`)
+    service.nearbySearch(request, (results, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        dispatch(setRestaurants(results))
+      }
+    })
   }
 
   function onMapReady(_, map) {
-    // setMap(map)
+    setMap(map)
     searchNearby(map, map.center)
   }
 

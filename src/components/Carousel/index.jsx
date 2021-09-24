@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 export function Carousel({ items, handleOpenModal }) {
-  if (items.length === 0) return <LottieLoader />
+  if (!items) return <LottieLoader />
 
   const settings = {
     dots: true,

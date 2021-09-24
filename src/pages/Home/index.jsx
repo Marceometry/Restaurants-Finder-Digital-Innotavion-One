@@ -1,17 +1,23 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { setRestaurant } from '../../redux/modules/restaurants'
 import { Aside, Map, Modal, SkeletonLoader } from '../../components'
 import { Wrapper } from './styles'
 
 export function Home() {
-  const { restaurant } = useSelector((state) => state.restaurants)
+  const { selectedRestaurant: restaurant } = useSelector(
+    (state) => state.restaurants
+  )
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [placeId, setPlaceId] = useState('')
   const [query, setQuery] = useState('')
+  const dispatch = useDispatch()
 
-  function handleOpenModal(placeId) {
-    setPlaceId(placeId)
+  function handleOpenModal(newPlaceId) {
     setIsModalOpen(true)
+    if (newPlaceId === placeId) return
+    dispatch(setRestaurant())
+    setPlaceId(newPlaceId)
   }
 
   return (
@@ -31,7 +37,9 @@ export function Home() {
             </p>
 
             <span className='is-restaurant-open'>
-              {restaurant.opening_hours.open_now
+              {!restaurant.opening_hours
+                ? 'Não há informações de horário'
+                : restaurant.opening_hours.open_now
                 ? 'Aberto agora'
                 : 'Fechado no momento'}
             </span>

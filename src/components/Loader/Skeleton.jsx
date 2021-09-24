@@ -6,7 +6,7 @@ const KeyFrameLoading = keyframes`
     opacity: 0.4;
   }
   100% {
-    opacity: .7;
+    opacity: .8;
   }
 `
 
@@ -16,7 +16,7 @@ const Skeleton = styled.div`
   height: ${({ height }) => height};
   background-color: #bbb;
   border-radius: 6px;
-  animation: ${KeyFrameLoading} 1s linear infinite alternate;
+  animation: ${KeyFrameLoading} 0.8s linear infinite alternate;
 
   ${({ absolute }) =>
     absolute &&

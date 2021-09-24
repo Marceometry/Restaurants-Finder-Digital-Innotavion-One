@@ -25,6 +25,7 @@ export const StyledCard = styled.a`
   }
 
   p {
+    width: 100%;
     padding: 6px;
     font-size: 14px;
     color: #fff;

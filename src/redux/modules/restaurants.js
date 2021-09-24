@@ -16,6 +16,7 @@ export function setRestaurants(restaurants) {
 }
 
 export function setRestaurant(restaurant) {
+  console.log('redux - ', restaurant)
   return {
     type: Types.SET_RESTAURANT,
     payload: restaurant,
