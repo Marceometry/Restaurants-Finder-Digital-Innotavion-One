@@ -9,8 +9,6 @@ export function Carousel({ items, handleOpenModal }) {
 
   const settings = {
     dots: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
     infinite: false,
     arrows: false,
     speed: 1000,
