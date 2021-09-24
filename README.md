@@ -15,8 +15,6 @@
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-funcionalidades">Funcionalidades</a>
-  <!-- &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-desafios-realizados">Desafios realizados</a> -->
 </p>
 
 <br>
@@ -44,10 +42,6 @@ Este projeto foi feito durante o curso "Criando um site para encontrar restauran
 - Busca de restaurantes por texto.
 - Modal que exibe detalhes do restaurante selecionado
 - Componentes de Skeleton Loading que melhoram a experiência do usuário.
-
-<!-- ## ✔ Desafios realizados
-
--  -->
 
 ---
 
