@@ -1,6 +1,12 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const AppearAnimation = keyframes`
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+`
 
 export const Overlay = styled.div`
+  animation: ${AppearAnimation} 0.3s both;
   background-color: ${({ theme }) => theme.colors.shadow};
   backdrop-filter: blur(2px);
   z-index: 999;
